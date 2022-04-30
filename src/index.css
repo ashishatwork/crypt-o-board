@@ -1,13 +1,183 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Poppins:wght@300;400;700&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{
+  text-decoration: none;
+}
+.app {
+  background-color: white;
+  color: #14161a;
+  min-height: 100vh;
+}
+.logo {
+  cursor: pointer;
+  margin-left: 15px;
+}
+.currency-selector-container {
+  margin-right: 15px;
+}
+
+.banner {
+background-image: linear-gradient(0deg, rgb(255, 204, 199), rgb(204, 224, 255));
+  width: 100%;
+  height: 100vh;
+  margin-top: 0;
+  padding: 25px 25px 0px 25px;
+}
+
+.banner-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  
+}
+.intro-text {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-container {
+  height: 40%;
+  display: flex;
+  align-items: center;
+
+}
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #14161a;
+}
+
+.footer {
+  text-align: end;
+  margin-right: 15px;
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: #14161a;
+
+}
+
+.progress-style {
+  width: 100%;
+}
+
+.sidebar {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  padding-right: 15px;
+  border-right: 5px solid gray;
+}
+
+.description {
+  width: 100%;
+  text-align: justify;
+}
+
+.chart-container{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  padding: 40px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loading-spinner div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(150, 97, 212) transparent transparent transparent;
+}
+.loading-spinner div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-spinner div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-spinner div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .sidebar {
+    width: 90%;
+    border-right: 0;
+    padding-right: 0;
+    align-items: center;
+  }
+  .description{
+    text-align: center;
+  }
+
+  .chart-container{
+    width: 100%;
+    margin-top: 0;
+    padding: 20px;
+    padding-top: 0;
+  }
+
+  #coins-table tbody, #coins-table tr, #coins-table td{
+    display: block;
+
+  }
+  #coins-table thead tr{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #coins-table td{
+    position: relative;
+    padding-left: 50%;
+  }
+  #coins-table td::before{
+    content: attr(data-title);
+    position: absolute;
+    left: 18%;
+    color: #0f1114;
+    font-weight: 500;
+  }
+  #coins-table tr{
+    border-bottom: 2px solid #e3e3e3;
+  }
+
+
 }
