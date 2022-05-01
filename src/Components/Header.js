@@ -6,7 +6,7 @@ const Header = () => {
     const {currency, setCurrency} = CryptoState()
 
     return (
-        <nav className="navbar sticky-top navbar-light"  style={{backgroundColor:'#fff1e6'}}>
+        <nav className="navbar sticky-top navbar-light"  style={{backgroundColor:'#fff'}}>
             <a className="navbar-brand logo" href="/">CRYPT-O-BOARD</a>
 
             <div className="currency-selector-container">
